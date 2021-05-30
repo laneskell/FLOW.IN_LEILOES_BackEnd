@@ -1,0 +1,40 @@
+GET http://localhost:3003/
+
+###
+
+GET http://localhost:3003/Auction
+
+###
+
+POST http://localhost:3003/actors
+Content-Type: application/json
+
+{
+    "title":"Mariana Ruy Barbosa",
+    "initialValue":5000,
+    "bidProgression":100,
+    "expirationDate":"1992-01-01"
+}
+
+###
+
+PUT http://localhost:3003/actors/009
+Content-Type: application/json
+
+    {
+
+    "salary": 19000
+    }
+
+
+###
+
+DELETE http://localhost:3003/actors/010
+
+
+###
+
+GET http://localhost:3003/actor/count/female
+
+    
+###
