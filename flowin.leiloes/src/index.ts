@@ -1,37 +1,83 @@
-import app from './app';
-import { connection } from './connection';
+import app from "./app";
+import { connection } from "./connection";
 
-
-app.get('/', (req, res)=> {res.send("Flow.in Leilões")})
-
-app.get('/Auction', async(req, res) => {
-    try{
-        const result =await connection('Auction')
-        res.send(result)
-    }catch(error){
-        console.log(error.message);
-        res.status(500).send('Internal Error')
-    }
-})
-
-app.post('/Auction', async(req,res) => {
-    try{
-        if(!req.body.title){
-            throw new Error("title is required")
+// CRIAR NOVO LEILÃO
+app.post("/Auction", async (req, res) => {
+  try {
+    if (!req.body.title) {
+      throw new Error("title is required");
+    } else if (new Date() >= req.body.expirationDate) {
+      throw new Error("The date cannot be today, or earlier than today");
     }
     const createAuction = {
-        title: req.body.title,
-        initialValue: req.body.initialValue,
-        bidProgression: req.body.bidProgression,
-        expirationDate: req.body.expirationDate
-    }
-    await connection('Auction').insert(createAuction)
-        res.status(201).send('Auction Created')
-
-
-}catch(error){
-    res.status(500).send('Internal Server Error')
+      title: req.body.title,
+      initialValue: req.body.initialValue,
+      bidProgression: req.body.bidProgression,
+      expirationDate: req.body.expirationDate,
+    };
+    await connection("Auction").insert(createAuction);
+    res.status(201).send("Auction Created");
+    console.log(new Date());
+  } catch (error) {
+    res.status(401).send(error.message);
     console.log(error.message);
-}
+  }
+});
 
-})
+// CRIAR UM LANCE EM UM LEILÃO
+app.post("/Auction/bid", async (req, res) => {
+  try {
+    const auctions = await connection("Auction");
+
+    if (!req.body.name) {
+      throw new Error("name is required!");
+    } else if (!req.body.value) {
+      throw new Error("value is required!");
+    } else if (!req.body.auction_id) {
+      throw new Error("id_auction is required!");
+    }
+    auctions.map((auction) => {
+      if (auction.id === req.body.auction_id) {
+        const checkBidProgression = req.body.value % auction.bidProgression;
+        if (checkBidProgression !== 0) {
+          throw new Error(
+            `The bidding progression for this auction is $ ${auction.bidProgression}`
+          );
+        }
+      }
+    });
+    const makeBid = {
+      name: req.body.name,
+      value: req.body.value,
+      auction_id: req.body.auction_id,
+    };
+    await connection("User_bid").insert(makeBid);
+    res.status(201).send("Successful bid!");
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
+// RETORNA TODOS OS LEILÕES
+app.get("/Auction", async (req, res) => {
+  try {
+    const result = await connection("Auction");
+    res.send(result);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send("Internal Error");
+  }
+});
+
+// RETORNA TODOS OS LANCES
+app.get("/Auction/bid", async (req, res) => {
+    try {
+      const result = await connection("User_bid");
+      res.send(result);
+    } catch (error) {
+      console.log(error.message);
+      res.status(500).send("Internal Error");
+    }
+  });
+  
+  

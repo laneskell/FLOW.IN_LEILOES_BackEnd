@@ -6,17 +6,35 @@ GET http://localhost:3003/Auction
 
 ###
 
-POST http://localhost:3003/actors
+GET http://localhost:3003/Auction/bid
+
+###
+
+POST http://localhost:3003/Auction
 Content-Type: application/json
 
 {
-    "title":"Mariana Ruy Barbosa",
+    "title":"Crazy Life Animated Art",
     "initialValue":5000,
     "bidProgression":100,
-    "expirationDate":"1992-01-01"
+    "expirationDate":"2021-08-20"
 }
 
 ###
+
+
+POST http://localhost:3003/Auction/bid
+Content-Type: application/json
+
+{
+    "name":"Vignesh Sundaresan",
+    "value":8200,
+    "auction_id":2
+}
+
+###
+
+
 
 PUT http://localhost:3003/actors/009
 Content-Type: application/json
