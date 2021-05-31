@@ -78,19 +78,18 @@ app.get("/Auction/bid", async (req: Request, res: Response) => {
   }
 });
 
-//  RETORNA UM LEILÃO INDIVIDIUALMENTE
-
+//  RETORNA OS DETALHES DE UM LEILÃO INDIVIDIUALMENTE
 app.get("/Auction/:id", async (req: Request, res: Response) => {
   try {
     const id = Number(req.params.id);
 
-    const auction = await connection.raw(`
+    const [ auction ] = await connection.raw(`
       SELECT *,  
       TIMESTAMPDIFF(DAY,NOW(),expirationDate) AS daysToFinish  
       FROM Auction WHERE id = ${id} 
    `);
 
-    const bids = await connection.raw(`  
+    const [bids] = await connection.raw(`  
       SELECT * 
       FROM User_bid WHERE auction_id = ${id} `);
 
@@ -101,7 +100,6 @@ app.get("/Auction/:id", async (req: Request, res: Response) => {
 
     res.status(200).send(auctionDetails);
   } catch (error) {
-    console.log(error.message);
-    res.status(500).send("Unexpected error!");
+    res.status(400).send(error.message);
   }
 });
