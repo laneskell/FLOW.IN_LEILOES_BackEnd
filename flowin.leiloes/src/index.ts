@@ -1,13 +1,12 @@
 import app from "./app";
+import { Request, Response } from "express";
 import { connection } from "./connection";
 
 // CRIAR NOVO LEILÃO
-app.post("/Auction", async (req, res) => {
+app.post("/Auction", async (req: Request, res: Response) => {
   try {
     if (!req.body.title) {
       throw new Error("title is required");
-    } else if (new Date() >= req.body.expirationDate) {
-      throw new Error("The date cannot be today, or earlier than today");
     }
     const createAuction = {
       title: req.body.title,
@@ -17,7 +16,6 @@ app.post("/Auction", async (req, res) => {
     };
     await connection("Auction").insert(createAuction);
     res.status(201).send("Auction Created");
-    console.log(new Date());
   } catch (error) {
     res.status(401).send(error.message);
     console.log(error.message);
@@ -25,7 +23,7 @@ app.post("/Auction", async (req, res) => {
 });
 
 // CRIAR UM LANCE EM UM LEILÃO
-app.post("/Auction/bid", async (req, res) => {
+app.post("/Auction/bid", async (req: Request, res: Response) => {
   try {
     const auctions = await connection("Auction");
 
@@ -59,7 +57,7 @@ app.post("/Auction/bid", async (req, res) => {
 });
 
 // RETORNA TODOS OS LEILÕES
-app.get("/Auction", async (req, res) => {
+app.get("/Auction", async (req: Request, res: Response) => {
   try {
     const result = await connection("Auction");
     res.send(result);
@@ -70,14 +68,40 @@ app.get("/Auction", async (req, res) => {
 });
 
 // RETORNA TODOS OS LANCES
-app.get("/Auction/bid", async (req, res) => {
-    try {
-      const result = await connection("User_bid");
-      res.send(result);
-    } catch (error) {
-      console.log(error.message);
-      res.status(500).send("Internal Error");
-    }
-  });
-  
-  
+app.get("/Auction/bid", async (req: Request, res: Response) => {
+  try {
+    const result = await connection("User_bid");
+    res.send(result);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send("Internal Error");
+  }
+});
+
+//  RETORNA UM LEILÃO INDIVIDIUALMENTE
+
+app.get("/Auction/:id", async (req: Request, res: Response) => {
+  try {
+    const id = Number(req.params.id);
+
+    const auction = await connection.raw(`
+      SELECT *,  
+      TIMESTAMPDIFF(DAY,NOW(),expirationDate) AS daysToFinish  
+      FROM Auction WHERE id = ${id} 
+   `);
+
+    const lances = await connection.raw(`  
+      SELECT * 
+      FROM User_bid WHERE auction_id = ${id} `);
+
+    const auctionDetails = {
+      auction,
+      lances,
+    };
+
+    res.status(200).send(auctionDetails);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send("Unexpected error!");
+  }
+});

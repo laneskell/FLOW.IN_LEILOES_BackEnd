@@ -1,58 +1,43 @@
-GET http://localhost:3003/
 
 ###
 
-GET http://localhost:3003/Auction
-
-###
-
-GET http://localhost:3003/Auction/bid
-
-###
-
+# CRIA UM LEILÃO
 POST http://localhost:3003/Auction
 Content-Type: application/json
 
 {
-    "title":"Crazy Life Animated Art",
-    "initialValue":5000,
-    "bidProgression":100,
-    "expirationDate":"2021-08-20"
+    "title":"test art3",
+    "initialValue":3000,
+    "bidProgression":200,
+    "expirationDate":"2021-08-22"
 }
 
 ###
 
-
+# CRIA UM LANCE
 POST http://localhost:3003/Auction/bid
 Content-Type: application/json
 
 {
-    "name":"Vignesh Sundaresan",
-    "value":8200,
-    "auction_id":2
+    "name":"Jonny Pey",
+    "value":3400,
+    "auction_id":3
 }
 
 ###
-
-
-
-PUT http://localhost:3003/actors/009
-Content-Type: application/json
-
-    {
-
-    "salary": 19000
-    }
+# RETORNA UM ARRAY C/ TODOS OS LEILÕES
+GET http://localhost:3003/Auction/
 
 
 ###
-
-DELETE http://localhost:3003/actors/010
+# RETORNA UM ARRAY C/ TODOS OS LANCES
+GET http://localhost:3003/Auction/bid
 
 
 ###
+# RETORNA OS DETALHES DE 1 LEILÃO C/ 
+# TODOS OS DADOS + DIAS PARA EXPIRAR + ARRAY DE LANCES
 
-GET http://localhost:3003/actor/count/female
+GET http://localhost:3003/Auction/3
 
-    
 ###
