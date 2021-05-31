@@ -1,6 +1,6 @@
 
 <p align="center">
-<img src="https://somosflow.in/static/media/logo-degrade.f39e57c7.png" />
+<img  src="https://somosflow.in/static/media/logo-degrade.f39e57c7.png" />
 </p>
 
 <p align="center">
@@ -22,6 +22,56 @@
 Flow.in Leilões é uma galeria de NFTs em que os usuário poderão adicionar suas obras para serem leiloadas sejam elas artes digitais, músicas, vídeos, etc.</p>
 
 ### Getting_started
+```
+git clone https://github.com/laneskell/FLOW.IN_LEILOES.git
+```
+```
+npm install
+```
+```
+npm i typescript ts-node
+```
+```
+npm i kenex 
+```
+```
+npm i express cors
+```
+##### Crie as tabelas tabela no mysql
+```
+CREATE TABLE Auction (
+  id INT AUTO_INCREMENT PRIMARY KEY ,
+  title VARCHAR(255) NOT NULL ,
+  initialValue INT NOT NULL, 
+  bidProgression INT NOT NULL,
+  expirationDate DATE NOT NULL 
+  );
+  
+  CREATE TABLE User_bid (
+  id INT AUTO_INCREMENT PRIMARY KEY ,
+  name VARCHAR(30) NOT NULL,
+  value INT NOT NULL,
+  auction_id INT NOT NULL,
+  FOREIGN KEY ( auction_id) REFERENCES Auction(id)
+  );
+
+```
+##### instale o dotenv 
+```
+npm i dotenv
+```
+##### Configure com as credencias do seu banco
+```
+DB_HOST = 00.000.000.000
+DB_PASSWORD = suasenhax12345xx
+DB_USER = seuUsuarioxxxx
+DB_SCHEMA = seuSchemaxxxx
+
+```
+##### Rode localmente
+```
+npm run dev 
+```
 
 
 ### Tecnologias
