@@ -4,8 +4,8 @@
 </p>
 
 <p align="center">
- <a href="#objetivo">Objetivo</a> •
- <a href="#Pré-Requisitos">Pré-Requisitos</a> • 
+ <a href="#objetivo_do_case">Objetivo</a> •
+ <a href="#getting_started">Getting started</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#aplicação">Aplicação</a> • 
  <a href="#autor">Autor</a> 
@@ -16,12 +16,12 @@
 
 <h1 align="center">FLOW.IN LEILÕES</h1>
 
-### Objetivo do Case
+### Objetivo_do_Case
 
 <p>Buscando estarmos imersos em todas as frentes de blockchain e criptoeconomia, surge o Flow.in Leilões!
 Flow.in Leilões é uma galeria de NFTs em que os usuário poderão adicionar suas obras para serem leiloadas sejam elas artes digitais, músicas, vídeos, etc.</p>
 
-### Pré-requisitos
+### Getting_started
 
 
 ### Tecnologias
