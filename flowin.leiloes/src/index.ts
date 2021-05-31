@@ -90,13 +90,13 @@ app.get("/Auction/:id", async (req: Request, res: Response) => {
       FROM Auction WHERE id = ${id} 
    `);
 
-    const lances = await connection.raw(`  
+    const bids = await connection.raw(`  
       SELECT * 
       FROM User_bid WHERE auction_id = ${id} `);
 
     const auctionDetails = {
       auction,
-      lances,
+      bids,
     };
 
     res.status(200).send(auctionDetails);
