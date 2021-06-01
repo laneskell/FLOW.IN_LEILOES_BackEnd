@@ -19,12 +19,12 @@
 ### Objetivo_do_Case
 
 <p>Buscando estarmos imersos em todas as frentes de blockchain e criptoeconomia, surge o Flow.in Leilões!
-Flow.in Leilões é uma galeria de NFTs em que os usuário poderão adicionar suas obras para serem leiloadas sejam elas artes digitais, músicas, vídeos, etc.</p>
-<p>Neste case você deverá desenvolver uma pequena API para o Flow.in Leilões!</p>
+Flow.in Leilões é uma galeria de NFTs em que os usuário poderão adicionar suas obras para serem leiloadas sejam elas artes digitais, músicas, vídeos, etc.
+Neste case foi desenvolvido uma pequena API para o Flow.in Leilões!</p>
 
 ### Aplicação
 ##### Veja o Deploy dos Endpoints na aws
--[Detalhes de um Leião](http://ec2-15-228-23-22.sa-east-1.compute.amazonaws.com:3001/Auction/1)
+-[Detalhes de um Leilão](http://ec2-15-228-23-22.sa-east-1.compute.amazonaws.com:3001/Auction/1)
 
 -[Todos os Leilões]( http://ec2-15-228-23-22.sa-east-1.compute.amazonaws.com:3001/Auction)
 
