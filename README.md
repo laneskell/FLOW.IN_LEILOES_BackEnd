@@ -8,7 +8,7 @@
  <a href="#getting_started">Getting started</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#aplicação">Aplicação</a> • 
- <a href="#autor">Autor</a> 
+ <a href="#desenvolvedora">Desenvolvedor</a> 
 </p>
 </h3>
   
@@ -20,20 +20,10 @@
 
 <p>Buscando estarmos imersos em todas as frentes de blockchain e criptoeconomia, surge o Flow.in Leilões!
 Flow.in Leilões é uma galeria de NFTs em que os usuário poderão adicionar suas obras para serem leiloadas sejam elas artes digitais, músicas, vídeos, etc.</p>
-
-### Tecnologias
-
-As seguintes tecnologias foram utilizadas no projeto:
-
-- [Mysql](https://dev.mysql.com/doc/)
-- [Node.js](https://nodejs.org/en/)
-- [Express](https://expressjs.com/)
-- [Knex](http://knexjs.org/)
-- [TypeScript](https://www.typescriptlang.org/docs/)
-
+<p>Neste case você deverá desenvolver uma pequena API para o Flow.in Leilões!</p>
 
 ### Aplicação
-##### Veja o Deploy dos Endpoints
+##### Veja o Deploy dos Endpoints na aws
 -[Detalhes de um Leião](http://ec2-15-228-23-22.sa-east-1.compute.amazonaws.com:3001/Auction/1)
 
 -[Todos os Leilões]( http://ec2-15-228-23-22.sa-east-1.compute.amazonaws.com:3001/Auction)
@@ -93,11 +83,25 @@ DB_SCHEMA = seuSchemaxxxx
 npm run dev-start
 ```
 
+### Tecnologias
 
--Documentação da API: 
+As seguintes tecnologias foram utilizadas no projeto:
+
+- [Mysql](https://dev.mysql.com/doc/)
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [Knex](http://knexjs.org/)
+- [TypeScript](https://www.typescriptlang.org/docs/)
+- 
+### Imagens: 
+
+![image](https://user-images.githubusercontent.com/77758983/120268650-95ce7180-c27c-11eb-932f-b7ad4bcef0b8.png)
+![image](https://user-images.githubusercontent.com/77758983/120268969-43418500-c27d-11eb-8732-b6c522f3c952.png)
+![image](https://user-images.githubusercontent.com/77758983/120269241-cf53ac80-c27d-11eb-949c-d5a60d6667c7.png)
+![image](https://user-images.githubusercontent.com/77758983/120269276-e09cb900-c27d-11eb-94ce-92496f4437e8.png)
 
 
-### Autor
+### Desenvolvedora
 
  <a href="https://www.linkedin.com/in/kell-lanes-dev/">Kell Lanes </a>
 
