@@ -42,7 +42,7 @@ npm i
 npm i typescript ts-node 
 ```
 ```
-npm i kenex mysql
+npm i knex mysql
 ```
 ```
 npm i express cors
