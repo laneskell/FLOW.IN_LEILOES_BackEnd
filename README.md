@@ -34,9 +34,9 @@ As seguintes tecnologias foram utilizadas no projeto:
 
 ### Aplicação
 ##### Veja o Deploy dos Endpoints
-Detalhes de um Leião: http://ec2-15-228-23-22.sa-east-1.compute.amazonaws.com:3001/Auction/1
-Todos os Leilões: http://ec2-15-228-23-22.sa-east-1.compute.amazonaws.com:3001/Auction
-Todos os Lances: http://ec2-15-228-23-22.sa-east-1.compute.amazonaws.com:3001/Auction/bid
+-[Detalhes de um Leião](http://ec2-15-228-23-22.sa-east-1.compute.amazonaws.com:3001/Auction/1)
+-[Todos os Leilões]( http://ec2-15-228-23-22.sa-east-1.compute.amazonaws.com:3001/Auction)
+-[Todos os Lances] (http://ec2-15-228-23-22.sa-east-1.compute.amazonaws.com:3001/Auction/bid)
 
 ### Getting_started
 ##### Para clonar a aplicação instale as dependências e configure as credenciais do banco.
