@@ -21,23 +21,41 @@
 <p>Buscando estarmos imersos em todas as frentes de blockchain e criptoeconomia, surge o Flow.in Leilões!
 Flow.in Leilões é uma galeria de NFTs em que os usuário poderão adicionar suas obras para serem leiloadas sejam elas artes digitais, músicas, vídeos, etc.</p>
 
+### Tecnologias
+
+As seguintes tecnologias foram utilizadas no projeto:
+
+- [Mysql](https://dev.mysql.com/doc/)
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [Knex](http://knexjs.org/)
+- [TypeScript](https://www.typescriptlang.org/docs/)
+
+
+### Aplicação
+##### Veja o Deploy dos Endpoints
+Detalhes de um Leião: http://ec2-15-228-23-22.sa-east-1.compute.amazonaws.com:3001/Auction/1
+Todos os Leilões: http://ec2-15-228-23-22.sa-east-1.compute.amazonaws.com:3001/Auction
+Todos os Lances: http://ec2-15-228-23-22.sa-east-1.compute.amazonaws.com:3001/Auction/bid
+
 ### Getting_started
+##### Para clonar a aplicação instale as dependências e configure as credenciais do banco.
 ```
 git clone https://github.com/laneskell/FLOW.IN_LEILOES.git
 ```
 ```
-npm install
+npm i
 ```
 ```
-npm i typescript ts-node
+npm i typescript ts-node 
 ```
 ```
-npm i kenex 
+npm i kenex mysql
 ```
 ```
 npm i express cors
 ```
-##### Crie as tabelas tabela no mysql
+##### Crie as tabelas tabelas no mysql
 ```
 CREATE TABLE Auction (
   id INT AUTO_INCREMENT PRIMARY KEY ,
@@ -70,23 +88,9 @@ DB_SCHEMA = seuSchemaxxxx
 ```
 ##### Rode localmente
 ```
-npm run dev 
+npm run dev-start
 ```
 
-
-### Tecnologias
-
-As seguintes tecnologias foram utilizadas no projeto:
-
-- [Mysql](https://dev.mysql.com/doc/)
-- [Node.js](https://nodejs.org/en/)
-- [Express](https://expressjs.com/)
-- [Knex](http://knexjs.org/)
-- [TypeScript](https://www.typescriptlang.org/docs/)
-
-### Aplicação
-
--link Deploy: 
 
 -Documentação da API: 
 
