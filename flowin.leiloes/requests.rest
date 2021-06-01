@@ -2,42 +2,42 @@
 ###
 
 # CRIA UM LEILÃO
-POST http://localhost:3003/Auction
+POST http://localhost:3001/Auction
 Content-Type: application/json
 
 {
-    "title":"test art3",
-    "initialValue":3000,
-    "bidProgression":200,
-    "expirationDate":"2021-08-22"
+    "title":" crazy green art ",
+    "initialValue":1500,
+    "bidProgression":50,
+    "expirationDate":"2021-07-02"
 }
 
 ###
 
 # CRIA UM LANCE
-POST http://localhost:3003/Auction/bid
+POST http://localhost:3001/Auction/bid
 Content-Type: application/json
 
 {
-    "name":"Jonny Pey",
-    "value":3400,
-    "auction_id":3
+    "name":"Kell Lanes",
+    "value":3600,
+    "auction_id":1
 }
 
 ###
 # RETORNA UM ARRAY C/ TODOS OS LEILÕES
-GET http://localhost:3003/Auction/
+GET http://localhost:3001/Auction/
 
 
 ###
 # RETORNA UM ARRAY C/ TODOS OS LANCES
-GET http://localhost:3003/Auction/bid
+GET http://localhost:3001/Auction/bid
 
 
 ###
 # RETORNA OS DETALHES DE 1 LEILÃO C/ 
 # TODOS OS DADOS + DIAS PARA EXPIRAR + ARRAY DE LANCES
 
-GET http://localhost:3003/Auction/3
+GET http://localhost:3001/Auction/1
 
 ###
