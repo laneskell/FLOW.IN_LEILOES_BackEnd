@@ -16,7 +16,7 @@
 
 <h1 align="center">FLOW.IN LEILÕES</h1>
 
-### Objetivo_do_Case
+### Objetivo
 
 <p>Buscando estarmos imersos em todas as frentes de blockchain e criptoeconomia, surge o Flow.in Leilões!
 Flow.in Leilões é uma galeria de NFTs em que os usuário poderão adicionar suas obras para serem leiloadas sejam elas artes digitais, músicas, vídeos, etc.
