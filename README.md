@@ -21,6 +21,9 @@
 <p>Buscando estarmos imersos em todas as frentes de blockchain e criptoeconomia, surge o Flow.in Leilões!
 Flow.in Leilões é uma galeria de NFTs em que os usuário poderão adicionar suas obras para serem leiloadas sejam elas artes digitais, músicas, vídeos, etc.
 Neste case foi desenvolvido uma pequena API para o Flow.in Leilões!</p>
+___
+Seeking to be immersed in all fronts of blockchain and cryptoeconomics, Flow.in Auctions appears! Flow.in Auctions is a gallery of NFTs where users can add their works to be auctioned whether they are digital arts, music, videos, etc. In this case a small API for Flow.in Auctions was developed!
+___
 
 ### Aplicação
 ##### Veja o Deploy dos Endpoints na aws
